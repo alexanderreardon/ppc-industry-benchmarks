@@ -90,6 +90,15 @@ let optionsTemplate =  {
     display: false
   },
   scales: {
+    yAxes: [
+      {
+        ticks: {
+          callback: function(value) {
+            return value + "%"
+          }
+        }
+      }
+    ],
     xAxes: [
       {
         ticks: {
@@ -107,6 +116,7 @@ class App extends Component {
     this.state = {
       metric: 'click-thru-rate',
       network: 'search',
+      chartData: dataTemplate
     }
   }
   
@@ -118,40 +128,35 @@ class App extends Component {
     console.log(this.refs.chart.chartInstance)
   }
 
-  componentWillUpdate() {
-    this.getChartData();
-  }
-
   getChartData() {
+    let chartData = dataTemplate;
     if (this.state.metric === 'cost-per-click' && this.state.network === 'search') {
-      dataTemplate.datasets[0].label = searchCpc.label;
-      dataTemplate.datasets[0].data = searchCpc.data;
+      chartData.datasets[0].label = searchCpc.label;
+      chartData.datasets[0].data = searchCpc.data;
     } else if (this.state.metric === 'cost-per-click' && this.state.network === 'display') {
-      dataTemplate.datasets[0].label = displayCpc.label;
-      dataTemplate.datasets[0].data = displayCpc.data;
+      chartData.datasets[0].label = displayCpc.label;
+      chartData.datasets[0].data = displayCpc.data;
     } else if (this.state.metric === 'click-thru-rate' && this.state.network === 'search') {
-      dataTemplate.datasets[0].label = searchCtr.label;
-      dataTemplate.datasets[0].data = searchCtr.data;
+      chartData.datasets[0].label = searchCtr.label;
+      chartData.datasets[0].data = searchCtr.data;
     } else if (this.state.metric === 'click-thru-rate' && this.state.network === 'display') {
-      dataTemplate.datasets[0].label = displayCtr.label;
-      dataTemplate.datasets[0].data = displayCtr.data;
+      chartData.datasets[0].label = displayCtr.label;
+      chartData.datasets[0].data = displayCtr.data;
     } else if (this.state.metric === 'conversion-rate' && this.state.network === 'search') {
-      dataTemplate.datasets[0].label = searchConvRate.label;
-      dataTemplate.datasets[0].data = searchConvRate.data;
+      chartData.datasets[0].label = searchConvRate.label;
+      chartData.datasets[0].data = searchConvRate.data;
     } else if (this.state.metric === 'conversion-rate' && this.state.network === 'display') {
-      dataTemplate.datasets[0].label = displayConvRate.label;
-      dataTemplate.datasets[0].data = displayConvRate.data;
-      
+      chartData.datasets[0].label = displayConvRate.label;
+      chartData.datasets[0].data = displayConvRate.data;
     } else if (this.state.metric === 'cost-per-conversion' && this.state.network === 'search') {
-      dataTemplate.datasets[0].label = searchCpa.label;
-      dataTemplate.datasets[0].data = searchCpa.data;
-      
+      chartData.datasets[0].label = searchCpa.label;
+      chartData.datasets[0].data = searchCpa.data;      
     } else if (this.state.metric === 'cost-per-conversion' && this.state.network === 'display') {
-      dataTemplate.datasets[0].label = displayCpa.label;
-      dataTemplate.datasets[0].data = displayCpa.data;
-      
+      chartData.datasets[0].label = displayCpa.label;
+      chartData.datasets[0].data = displayCpa.data;
     }
-    
+    this.setState({chartData: chartData});
+    this.forceUpdate();
   }
 
   metricFilterUpdate(metricValue) {
@@ -159,6 +164,7 @@ class App extends Component {
       metric: metricValue,
     });
     this.getChartData();
+    this.forceUpdate();
   }
   
   networkFilterUpdate(networkValue) {
@@ -166,6 +172,7 @@ class App extends Component {
       network: networkValue,
     })
     this.getChartData();
+    this.forceUpdate();
   }
 
   render() {
@@ -174,11 +181,11 @@ class App extends Component {
 
       <div className="myApp" >
         <div className="dropdowns">
-          <MetricDropdown metricFilterUpdate={this.metricFilterUpdate.bind(this)} />
-          <NetworkDropdown networkFilterUpdate={this.networkFilterUpdate.bind(this)} />
+          <MetricDropdown onChange={this.metricFilterUpdate.bind(this)} />
+          <NetworkDropdown onChange={this.networkFilterUpdate.bind(this)} />
         </div>
         <br />
-        <Bar ref='chart' data={dataTemplate} options={optionsTemplate} />
+        <Bar ref='chart' data={this.state.chartData} options={optionsTemplate} redraw />
       </div>
 
     );

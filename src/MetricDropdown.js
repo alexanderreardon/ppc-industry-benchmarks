@@ -2,16 +2,17 @@ import React, { Component } from 'react';
 
 export class MetricDropdown extends Component {
   
-    metricFilterUpdate = (e) => {
-        var metricInput = e.target.value;
-        this.props.metricFilterUpdate(metricInput);
+    handleChange = (e) => {
+        this.setState({ metric: e.target.value});
+        this.props.onChange(e.target.value);
     }
+
   
     render() {
         return (
         <select
             id="metric-dropdown"
-            onChange={this.metricFilterUpdate.bind(this)} >
+            onChange={this.handleChange} >
             <option value="click-thru-rate">Click-Thru Rate</option>
             <option value="cost-per-click">Cost Per Click</option>
             <option value="conversion-rate">Conversion Rate</option>
