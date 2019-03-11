@@ -136,6 +136,7 @@ let optionsTemplate =  {
     text: 'Google Advertising Industry Standards',
     fontSize: 25,
     fontColor: '#136598',
+    fontFamily: "'Lato', 'Open Sans', sans-serif",
     padding: 15
   },
   legend: {
