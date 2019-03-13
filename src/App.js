@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import MetricDropdown from './MetricDropdown.js';
 import NetworkDropdown from './NetworkDropdown.js';
 import BarChart from './BarChart.js';
-import './App.css';
-
 
 class App extends Component {
   constructor() {

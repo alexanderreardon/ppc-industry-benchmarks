@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 export class NetworkDropdown extends Component {
 
     handleChange = (e) => {
-      // this.setState({ network: e.target.value});
       this.props.onChange(e.target.value);
     }
 

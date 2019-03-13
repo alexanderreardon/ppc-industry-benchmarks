@@ -3,11 +3,9 @@ import React, { Component } from 'react';
 export class MetricDropdown extends Component {
   
     handleChange = (e) => {
-        // this.setState({ metric: e.target.value });
         this.props.onChange(e.target.value);
     }
 
-  
     render() {
         return (
         <select

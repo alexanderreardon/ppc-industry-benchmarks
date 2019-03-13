@@ -8,6 +8,16 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.App {
+  text-align: center;
+}
+
+.myApp {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Begin dropdown styling */
 .dropdowns {
   max-width: 700px;
   margin: 0 auto;

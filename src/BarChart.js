@@ -34,8 +34,7 @@ const industries = {
       'rgba(60, 84, 147, 1)',
       'rgba(144, 210, 189, 1)',
       'rgba(213, 132, 210, 1)']
-  }
-  
+  } 
 const searchCpc = {
     labels: industries.names,
     datasets: [ {
@@ -121,9 +120,7 @@ const displayCpa = {
 const dollarMetrics = ['cost-per-click', 'cost-per-conversion'];
 const percentMetrics = ['click-thru-rate', 'conversion-rate'];
 
-
-
-let optionsTemplate =  {
+let options =  {
     title: {
       display: true,
       text: 'Google Advertising Industry Standards',
@@ -160,9 +157,8 @@ let optionsTemplate =  {
 
 export default ( { metric, network } ) => {
     
-    
     var chartData = function() {
-        optionsTemplate.scales.yAxes[0].ticks.callback = (value) => {
+        options.scales.yAxes[0].ticks.callback = (value) => {
             value.toFixed(2);
             if (dollarMetrics.includes(metric)) {
                 return '$' + value.toFixed(2);
@@ -171,11 +167,11 @@ export default ( { metric, network } ) => {
             }
         };
 
-        optionsTemplate.scales.yAxes[0].ticks.beginAtZero = true;
+        options.scales.yAxes[0].ticks.beginAtZero = true;
         
         if (metric === 'cost-per-click' && network === 'search') {
             // Change the title dynamically
-            // optionsTemplate.title.text = 'Avg. CPC on Google Search Network';
+            // options.title.text = 'Avg. CPC on Google Search Network';
             return searchCpc
         } else if (metric === 'cost-per-click' && network === 'display') {
           return displayCpc
@@ -196,7 +192,7 @@ export default ( { metric, network } ) => {
 
     return (
     <div>
-        <Bar data={chartData} options={optionsTemplate} redraw />
+        <Bar data={chartData} options={options} redraw />
     </div>
     )
 };
