@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Description from './Description';
 import MetricDropdown from './MetricDropdown.js';
 import NetworkDropdown from './NetworkDropdown.js';
 import BarChart from './BarChart.js';
@@ -29,6 +30,7 @@ class App extends Component {
     return (
 
       <div className="myApp" >
+        <Description />
         <div className="dropdowns">
           <MetricDropdown onChange={this.metricFilterUpdate.bind(this)} />
           <NetworkDropdown onChange={this.networkFilterUpdate.bind(this)} />

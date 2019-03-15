@@ -148,6 +148,9 @@ let options =  {
           ticks: {
             // Prevents only showing a couple industry names
             autoSkip: false
+          },
+          gridLines: {
+            display: false
           }
         }
       ],
