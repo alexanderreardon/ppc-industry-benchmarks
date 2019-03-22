@@ -122,7 +122,7 @@ const percentMetrics = ['click-thru-rate', 'conversion-rate'];
 
 let options =  {
     title: {
-      display: true,
+      display: false,
       text: 'Google Advertising Industry Standards',
       fontSize: 25,
       fontColor: '#136598',
