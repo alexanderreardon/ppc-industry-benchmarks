@@ -132,6 +132,7 @@ let options =  {
     legend: {
       display: false
     },
+    maintainAspectRatio: false,
     scales: {
       yAxes: [
         {
@@ -194,7 +195,7 @@ export default ( { metric, network } ) => {
     }
 
     return (
-    <div>
+    <div className="chart-container">
         <Bar data={chartData} options={options} redraw />
     </div>
     )

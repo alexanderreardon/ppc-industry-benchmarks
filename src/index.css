@@ -8,13 +8,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.App {
-  text-align: center;
-}
-
 .myApp {
   max-width: 1200px;
-  margin: 50px auto 15px auto;
+  margin: 45px auto 15px auto;
 }
 
 /* Title+Description styling */
@@ -23,6 +19,7 @@ body {
   margin: 0 auto;
   font-size: 18px;
   line-height: 1.75em;
+  text-align: center;
 }
 
 .title {
@@ -50,14 +47,27 @@ body {
 
 /* Begin dropdown styling */
 .dropdowns {
-  max-width: 700px;
+  max-width: 800px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   margin: 0 auto;
 }
 
 #metric-dropdown, #network-dropdown {
-  margin: 30px 60px 45px 60px;
+  margin: 30px 60px 30px 60px;
   font-size: 18px;
+  width: 200px;
   font-family: 'Open Sans', 'Lato', sans-serif;
+  justify-self: center;
+}
+
+@media screen and (max-width: 650px) {
+  .dropdowns {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin: 0 auto;
+  }
 }
 
 select {
@@ -83,4 +93,25 @@ select::-ms-expand {
     color: rgba(0, 0, 0, 0);
     text-shadow: 0 0 0 #ffffff;
   }
+}
+
+
+.chart-container {
+  height: 600px;
+}
+
+@media screen and (max-width: 850px) {
+  
+}
+
+@media screen and (max-width: 650px) {
+  
+}
+
+@media screen and (max-width: 400px) {
+  .chart-container {
+    height: 80vh;
+  }
+ 
+
 }
