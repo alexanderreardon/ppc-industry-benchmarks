@@ -195,9 +195,11 @@ export default ( { metric, network } ) => {
     }
 
     return (
-    <div className="chart-container">
-        <Bar data={chartData} options={options} redraw />
-    </div>
+      <div className="chart-container">
+        <div className="chart-container-inner">
+          <Bar data={chartData} options={options} redraw />
+        </div>
+      </div>
     )
 };
 
