@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "/ppc-industry-benchmarks/static/js/runtime~main.6a4078c0.js"
   },
   {
-    "revision": "bdb3a7936da1c8909e55",
-    "url": "/ppc-industry-benchmarks/static/js/main.bdb3a793.chunk.js"
+    "revision": "9790c8e25893b517f8ff",
+    "url": "/ppc-industry-benchmarks/static/js/main.9790c8e2.chunk.js"
   },
   {
     "revision": "ac3e647b59a217103767",
     "url": "/ppc-industry-benchmarks/static/js/2.ac3e647b.chunk.js"
   },
   {
-    "revision": "bdb3a7936da1c8909e55",
-    "url": "/ppc-industry-benchmarks/static/css/main.210b4276.chunk.css"
+    "revision": "9790c8e25893b517f8ff",
+    "url": "/ppc-industry-benchmarks/static/css/main.c9b6e741.chunk.css"
   },
   {
-    "revision": "7284e330713d04d0faada6fea55355fd",
+    "revision": "a9c22936d68b3e48de9d6e3f127ebcbb",
     "url": "/ppc-industry-benchmarks/index.html"
   }
 ];

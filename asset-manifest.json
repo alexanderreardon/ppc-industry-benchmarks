@@ -1,13 +1,13 @@
 {
-  "main.css": "/ppc-industry-benchmarks/static/css/main.210b4276.chunk.css",
-  "main.js": "/ppc-industry-benchmarks/static/js/main.bdb3a793.chunk.js",
-  "main.js.map": "/ppc-industry-benchmarks/static/js/main.bdb3a793.chunk.js.map",
+  "main.css": "/ppc-industry-benchmarks/static/css/main.c9b6e741.chunk.css",
+  "main.js": "/ppc-industry-benchmarks/static/js/main.9790c8e2.chunk.js",
+  "main.js.map": "/ppc-industry-benchmarks/static/js/main.9790c8e2.chunk.js.map",
   "runtime~main.js": "/ppc-industry-benchmarks/static/js/runtime~main.6a4078c0.js",
   "runtime~main.js.map": "/ppc-industry-benchmarks/static/js/runtime~main.6a4078c0.js.map",
   "static/js/2.ac3e647b.chunk.js": "/ppc-industry-benchmarks/static/js/2.ac3e647b.chunk.js",
   "static/js/2.ac3e647b.chunk.js.map": "/ppc-industry-benchmarks/static/js/2.ac3e647b.chunk.js.map",
   "index.html": "/ppc-industry-benchmarks/index.html",
-  "precache-manifest.82d254a051c012b9ccb76263eea24320.js": "/ppc-industry-benchmarks/precache-manifest.82d254a051c012b9ccb76263eea24320.js",
+  "precache-manifest.e961038c752abd462bbaa7a521531b67.js": "/ppc-industry-benchmarks/precache-manifest.e961038c752abd462bbaa7a521531b67.js",
   "service-worker.js": "/ppc-industry-benchmarks/service-worker.js",
-  "static/css/main.210b4276.chunk.css.map": "/ppc-industry-benchmarks/static/css/main.210b4276.chunk.css.map"
+  "static/css/main.c9b6e741.chunk.css.map": "/ppc-industry-benchmarks/static/css/main.c9b6e741.chunk.css.map"
 }
