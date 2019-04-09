@@ -3,6 +3,7 @@ import Description from './Description';
 import MetricDropdown from './MetricDropdown.js';
 import NetworkDropdown from './NetworkDropdown.js';
 import BarChart from './BarChart.js';
+import Footer from './Footer.js';
 
 class App extends Component {
   constructor() {
@@ -37,6 +38,7 @@ class App extends Component {
         </div>
         <br />
         <BarChart metric={this.state.metric} network={this.state.network} />
+        <Footer />
       </div>
 
     );
