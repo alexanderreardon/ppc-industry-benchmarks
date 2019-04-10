@@ -11,8 +11,9 @@ export class NetworkDropdown extends Component {
         <select 
             id="network-dropdown"
             onChange={this.handleChange.bind(this)} >
-            <option value="search" >Google Search Ads</option>
-            <option value="display" >Google Display Ads</option>
+            <option value="search" >Search campaigns</option>
+            <option value="display" >Display campaigns</option>
+            <option value="shopping" >Shopping campaigns</option>
         </select>
       )
     }

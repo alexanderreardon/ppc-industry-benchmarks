@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Description from './Description';
 import MetricDropdown from './MetricDropdown.js';
 import NetworkDropdown from './NetworkDropdown.js';
+import PlatformDropdown from './PlatformDropdown.js';
 import BarChart from './BarChart.js';
 import Footer from './Footer.js';
 
@@ -10,7 +11,8 @@ class App extends Component {
     super();
     this.state = {
       metric: 'click-thru-rate',
-      network: 'search'
+      network: 'search',
+      platform: 'google'
     }
   }
 
@@ -26,6 +28,12 @@ class App extends Component {
     })
   }
 
+  platformFilterUpdate(platformValue) {
+    this.setState({
+      platform: platformValue,
+    })
+  }
+
   render() {
 
     return (
@@ -35,9 +43,10 @@ class App extends Component {
         <div className="dropdowns">
           <MetricDropdown onChange={this.metricFilterUpdate.bind(this)} />
           <NetworkDropdown onChange={this.networkFilterUpdate.bind(this)} />
+          <PlatformDropdown onChange={this.platformFilterUpdate.bind(this)} />
         </div>
         <br />
-        <BarChart metric={this.state.metric} network={this.state.network} />
+        <BarChart metric={this.state.metric} network={this.state.network} platform={this.state.platform} />
         <Footer />
       </div>
 

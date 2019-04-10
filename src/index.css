@@ -62,18 +62,30 @@ body {
 
 /* Begin dropdown styling */
 .dropdowns {
-  max-width: 800px;
+  /* max-width: 1000px; */
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin: 0 auto;
 }
 
-#metric-dropdown, #network-dropdown {
+#metric-dropdown, #network-dropdown, #platform-dropdown {
   margin: 30px 60px 30px 60px;
   font-size: 18px;
   width: 200px;
   font-family: 'Open Sans', 'Lato', sans-serif;
   justify-self: center;
+}
+
+#metric-dropdown, #platform-dropdown {
+  width: 200px;
+}
+
+#network-dropdown {
+  width: 225px; 
+}
+
+#platform-dropdown {
+  display: none;
 }
 
 @media screen and (max-width: 650px) {
