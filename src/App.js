@@ -41,9 +41,14 @@ class App extends Component {
       <div className="myApp" >
         <Description />
         <div className="dropdowns">
+          <span id="dropdown-span-wrap">
+          Show me the average
           <MetricDropdown onChange={this.metricFilterUpdate.bind(this)} />
+          for 
           <NetworkDropdown onChange={this.networkFilterUpdate.bind(this)} />
+          on 
           <PlatformDropdown onChange={this.platformFilterUpdate.bind(this)} />
+          </span>
         </div>
         <br />
         <BarChart metric={this.state.metric} network={this.state.network} platform={this.state.platform} />
