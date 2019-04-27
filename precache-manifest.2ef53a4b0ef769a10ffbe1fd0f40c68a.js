@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/ppc-industry-benchmarks/static/css/main.c938e02a.chunk.css"
   },
   {
-    "revision": "e16a6526ebb360ed9b3757aca39a94eb",
+    "revision": "5f17047a432ee23f05e313de772dafba",
     "url": "/ppc-industry-benchmarks/index.html"
   }
 ];
