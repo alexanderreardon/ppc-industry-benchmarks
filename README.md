@@ -13,8 +13,7 @@ Shows the average CTR, CPC, Conversion Rate, and CPA for both Search and Display
 
 ### TODO:
 1. Add data labels to chart.
-1. Update favicon.
-1. Create meta description & meta image for social sharing.
 
 ### Log
 4/27/2019 - Added Bing Ads support, language around dropdown dropdowns to guide user.
+4/27/2019 - Added meta description & image tags, re-organized <head> in index.html. Added favicon.

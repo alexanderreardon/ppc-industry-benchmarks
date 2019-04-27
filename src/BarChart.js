@@ -395,7 +395,7 @@ export default ( { metric, network, platform } ) => {
 
         options.scales.yAxes[0].ticks.beginAtZero = true;
         
-        if (metric === 'cost-per-click' && network === 'search' && platform == 'google') {
+        if (metric === 'cost-per-click' && network === 'search' && platform === 'google') {
           // Change the title dynamically
           // options.title.text = 'Avg. CPC on Google Search Network';
           return cpcGoogleSearch
