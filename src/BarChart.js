@@ -1,5 +1,6 @@
 import React from 'react';
 import { Bar } from 'react-chartjs-2';
+import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 
 const industries = {
@@ -342,47 +343,62 @@ const cpaBingShopping = {
 const dollarMetrics = ['cost-per-click', 'cost-per-conversion'];
 const percentMetrics = ['click-thru-rate', 'conversion-rate'];
 
-let options =  {
-    title: {
-      display: false,
-      text: 'Google Advertising Industry Standards',
-      fontSize: 25,
-      fontColor: '#136598',
-      fontFamily: "'Lato', 'Open Sans', sans-serif",
-      padding: 15
-    },
-    legend: {
-      display: false
-    },
-    maintainAspectRatio: false,
-    scales: {
-      yAxes: [
-        {
-          ticks: {
-            callback: function(value) {
-
-            }
-          },
-          beginAtZero: true
-        }
-      ],
-      xAxes: [
-        {
-          ticks: {
-            // Prevents only showing a couple industry names
-            autoSkip: false
-          },
-          gridLines: {
-            display: false
-          }
-        }
-      ],
-    },
-  };
-
 
 export default ( { metric, network, platform } ) => {
-    
+
+    let options =  {
+      plugins: {
+        datalabels: {
+          display: true,
+          color: 'black',
+          anchor: 'end',
+          align: 'top',
+          formatter: function(value) {
+              if (dollarMetrics.includes(metric)) {
+                return '$' + value.toFixed(2);
+              } else if (percentMetrics.includes(metric)) {
+                return value.toFixed(2) + '%';
+              }
+          }
+        }
+      },
+      title: {
+        display: false,
+        text: 'Google Advertising Industry Standards',
+        fontSize: 25,
+        fontColor: '#136598',
+        fontFamily: "'Lato', 'Open Sans', sans-serif",
+        padding: 15
+      },
+      legend: {
+        display: false
+      },
+      maintainAspectRatio: false,
+      scales: {
+        yAxes: [
+          {
+            ticks: {
+              callback: function(value) {
+
+              }
+            },
+            beginAtZero: true
+          }
+        ],
+        xAxes: [
+          {
+            ticks: {
+              // Prevents only showing a couple industry names
+              autoSkip: false
+            },
+            gridLines: {
+              display: false
+            }
+          }
+        ],
+      },
+    };
+
     var chartData = function() {
         options.scales.yAxes[0].ticks.callback = (value) => {
             value.toFixed(2);

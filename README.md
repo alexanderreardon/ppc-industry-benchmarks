@@ -13,7 +13,9 @@ Shows the average CTR, CPC, Conversion Rate, and CPA for both Search and Display
 
 ### TODO:
 1. Add data labels to chart.
+1. Add toggle for displaying data labels (?)
 
-### Log
+### Log:
 4/27/2019 - Added Bing Ads support, language around dropdown dropdowns to guide user.
 4/27/2019 - Added meta description & image tags, re-organized <head> in index.html. Added favicon.
+4/28/2019 - Added data labels to chart using `chartjs-plugin-datalabels`.

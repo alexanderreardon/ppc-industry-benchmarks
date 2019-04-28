@@ -5,6 +5,7 @@
   "homepage": "https://alexanderreardon.github.io/ppc-industry-benchmarks",
   "dependencies": {
     "chart.js": "^2.7.3",
+    "chartjs-plugin-datalabels": "^0.6.0",
     "react": "^16.8.3",
     "react-chartjs-2": "^2.7.4",
     "react-dom": "^16.8.3",
