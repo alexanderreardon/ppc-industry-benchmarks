@@ -1,138 +1,73 @@
 import React from 'react';
 import { Bar } from 'react-chartjs-2';
-import ChartDataLabels from 'chartjs-plugin-datalabels';
+import 'chartjs-plugin-datalabels';
 
 
 const industries = {
   searchDisplayGoogle: {
-      industryNames: ['Advocacy','Auto','B2B','Consumer Services','Dating & Personals','E-Commerce','Education','Employment Services','Finance & Insurance','Health & Medical','Home Goods','Industrial Services','Legal','Real Estate','Technology','Travel & Hospitality'],
-      backgroundColors: [
-          'rgba(59, 117, 93,0.4)',
-          'rgba(106, 108, 192, 0.4)',
-          'rgba(206, 225, 66, 0.4)',
-          'rgba(226, 112, 61, 0.4)',
-          'rgba(192, 54, 35, 0.4)',
-          'rgba(37, 120, 180, 0.4)',
-          'rgba(153, 156, 167, 0.4)',
-          'rgba(187, 71, 169, 0.4)',
-          'rgba(44, 114, 125, 0.4)',
-          'rgba(0, 0, 0, 0.4)',
-          'rgba(80, 70, 87, 0.4)',
-          'rgba(84, 168, 61, 0.4)',
-          'rgba(227, 143, 76, 0.4)',
-          'rgba(60, 84, 147, 0.4)',
-          'rgba(144, 210, 189, 0.4)',
-          'rgba(213, 132, 210, 0.4)'],
-      borderColors: ['rgba(59, 117, 93,1)',
-          'rgba(106, 108, 192, 1)',
-          'rgba(206, 225, 66, 1)',
-          'rgba(226, 112, 61, 1)',
-          'rgba(192, 54, 35, 1)',
-          'rgba(37, 120, 180, 1)',
-          'rgba(153, 156, 167, 1)',
-          'rgba(187, 71, 169, 1)',
-          'rgba(44, 114, 125, 1)',
-          'rgba(0, 0, 0, 1)',
-          'rgba(80, 70, 87, 1)',
-          'rgba(84, 168, 61, 1)',
-          'rgba(227, 143, 76, 1)',
-          'rgba(60, 84, 147, 1)',
-          'rgba(144, 210, 189, 1)',
-          'rgba(213, 132, 210, 1)']
+    industryNames: [
+      'Advocacy',
+      'Auto',
+      'B2B',
+      'Consumer Services',
+      'Dating & Personals',
+      'E-Commerce',
+      'Education',
+      'Employment Services',
+      'Finance & Insurance',
+      'Health & Medical',
+      'Home Goods',
+      'Industrial Services',
+      'Legal',
+      'Real Estate',
+      'Technology',
+      'Travel & Hospitality'],
+    backgroundColors: ['rgba(59, 117, 93,0.4)', 'rgba(106, 108, 192, 0.4)', 'rgba(206, 225, 66, 0.4)', 'rgba(226, 112, 61, 0.4)', 'rgba(192, 54, 35, 0.4)', 'rgba(37, 120, 180, 0.4)', 'rgba(153, 156, 167, 0.4)', 'rgba(187, 71, 169, 0.4)', 'rgba(44, 114, 125, 0.4)', 'rgba(0, 0, 0, 0.4)', 'rgba(80, 70, 87, 0.4)', 'rgba(84, 168, 61, 0.4)', 'rgba(227, 143, 76, 0.4)', 'rgba(60, 84, 147, 0.4)', 'rgba(144, 210, 189, 0.4)', 'rgba(213, 132, 210, 0.4)'],
+    borderColors: ['rgba(59, 117, 93,1)', 'rgba(106, 108, 192, 1)', 'rgba(206, 225, 66, 1)', 'rgba(226, 112, 61, 1)', 'rgba(192, 54, 35, 1)', 'rgba(37, 120, 180, 1)', 'rgba(153, 156, 167, 1)', 'rgba(187, 71, 169, 1)', 'rgba(44, 114, 125, 1)', 'rgba(0, 0, 0, 1)', 'rgba(80, 70, 87, 1)', 'rgba(84, 168, 61, 1)', 'rgba(227, 143, 76, 1)', 'rgba(60, 84, 147, 1)', 'rgba(144, 210, 189, 1)', 'rgba(213, 132, 210, 1)']
   },
   shoppingGoogleBing: {
-      industryNames: [
-          'Medical Supplies',
-          'Health & Beauty',
-          'Child & Infant Care',
-          'Pet Care',
-          'Clothing & Apparel',
-          'Food & Alcohol',
-          'Home & Garden',
-          'HVAC & Climate Control',
-          'Automotive Supplies',
-          'Travel & Luggage',
-          'Entertainment & Events',
-          'Educational Supplies',
-          'Computers & Technology',
-          'Office & Business Needs',
-          'Art & Music',
-          'Chemical & Industrial'],
-      backgroundColors: [
-          'rgba(14, 116, 187, 0.4)',
-          'rgba(93, 170, 212, 0.4)',
-          'rgba(251, 137, 67, 0.4)',
-          'rgba(252, 189, 148, 0.4)',
-          'rgba(251, 192, 26, 0.4)',
-          'rgba(253, 214, 93, 0.4)',
-          'rgba(131, 211, 148, 0.4)',
-          'rgba(65, 178, 88, 0.4)',
-          'rgba(139, 211, 233, 0.4)',
-          'rgba(31, 175, 209, 0.4)',
-          'rgba(104, 107, 174, 0.4)',
-          'rgba(181, 185, 220, 0.4)',
-          'rgba(147, 73, 160, 0.4)',
-          'rgba(203, 131, 179, 0.4)',
-          'rgba(157, 22, 125, 0.4)',
-          'rgba(127, 128, 133, 0.4)'],
-      borderColors: [
-          'rgba(14, 116, 187, 1)',
-          'rgba(93, 170, 212, 1)',
-          'rgba(251, 137, 67, 1)',
-          'rgba(252, 189, 148, 1)',
-          'rgba(251, 192, 26, 1)',
-          'rgba(253, 214, 93, 1)',
-          'rgba(131, 211, 148, 1)',
-          'rgba(65, 178, 88, 1)',
-          'rgba(139, 211, 233, 1)',
-          'rgba(31, 175, 209, 1)',
-          'rgba(104, 107, 174, 1)',
-          'rgba(181, 185, 220, 1)',
-          'rgba(147, 73, 160, 1)',
-          'rgba(203, 131, 179, 1)',
-          'rgba(157, 22, 125, 1)',
-          'rgba(127, 128, 133, 1)']
+    industryNames: [
+      'Medical Supplies',
+      'Health & Beauty',
+      'Child & Infant Care',
+      'Pet Care',
+      'Clothing & Apparel',
+      'Food & Alcohol',
+      'Home & Garden',
+      'HVAC & Climate Control',
+      'Automotive Supplies',
+      'Travel & Luggage',
+      'Entertainment & Events',
+      'Educational Supplies',
+      'Computers & Technology',
+      'Office & Business Needs',
+      'Art & Music',
+      'Chemical & Industrial'],
+    backgroundColors: ['rgba(14, 116, 187, 0.4)', 'rgba(93, 170, 212, 0.4)', 'rgba(251, 137, 67, 0.4)', 'rgba(252, 189, 148, 0.4)', 'rgb (251, 192, 26, 0.4)', 'rgba(253, 214, 93, 0.4)', 'rgba(131, 211, 148, 0.4)', 'rgba(65, 178, 88, 0.4)', 'rgba(139, 211, 233, 0.4)', 'rgba(31, 175, 209, 0.4)', 'rgba(104, 107, 174, 0.4)', 'rgba(181, 185, 220, 0.4)', 'rgba(147, 73, 160, 0.4)', 'rgba(203, 131, 179, 0.4)', 'rgba(157, 22, 125, 0.4)', 'rgba(127, 128, 133, 0.4)'],
+    borderColors: ['rgba(14, 116, 187, 1)', 'rgba(93, 170, 212, 1)', 'rgba(251, 137, 67, 1)', 'rgba(252, 189, 148, 1)', 'rgba(251, 192, 26, 1)', 'rgba(253, 214, 93, 1)', 'rgba(131, 211, 148, 1)', 'rgba(65, 178, 88, 1)', 'rgba(139, 211, 233, 1)', 'rgba(31, 175, 209, 1)', 'rgba(104, 107, 174, 1)', 'rgba(181, 185, 220, 1)', 'rgba(147, 73, 160, 1)', 'rgba(203, 131, 179, 1)', 'rgba(157, 22, 125, 1)', 'rgba(127, 128, 133, 1)']
   },
   bingSearchDisplay: {
-    industryNames: ["Apparel & Accessories", "Automotive", "B2B Services", "B2C Services", "Careers & Employment", "Consumer Electronics", "Education", "Finance & Insurance", "Health & Wellness", "Home & Garden", "Home Improvement", "Home Services", "Legal Services", "Real Estate", "Restaurants & Food", "Retail", "Technology", "Travel & Hospitality"],
-    backgroundColors: [
-      "rgb(59, 117, 94, 0.4)",
-      "rgb(106, 108, 192, 0.4)",
-      "rgb(202, 222, 45, 0.4)",
-      "rgb(226, 112, 60, 0.4)",
-      "rgb(192, 55, 36, 0.4)",
-      "rgb(37, 120, 180, 0.4)",
-      "rgb(153, 156, 167, 0.4)",
-      "rgb(188, 71, 169, 0.4)",
-      "rgb(44, 114, 125, 0.4)",
-      "rgb(38, 38, 38, 0.4)",
-      "rgb(80, 70, 87, 0.4)",
-      "rgb(84, 168, 61, 0.4)",
-      "rgb(227, 143, 77, 0.4)",
-      "rgb(60, 83, 148, 0.4)",
-      "rgb(107, 139, 177, 0.4)",
-      "rgb(144, 210, 189, 0.4)",
-      "rgb(213, 132, 210, 0.4)",
-      "rgb(255, 154, 143, 0.4)"],
-    borderColors: [
-      "rgb(59, 117, 94, 1)",
-      "rgb(106, 108, 192, 1)",
-      "rgb(202, 222, 45, 1)",
-      "rgb(226, 112, 60, 1)",
-      "rgb(192, 55, 36, 1)",
-      "rgb(37, 120, 180, 1)",
-      "rgb(153, 156, 167, 1)",
-      "rgb(188, 71, 169, 1)",
-      "rgb(44, 114, 125, 1)",
-      "rgb(38, 38, 38, 1)",
-      "rgb(80, 70, 87, 1)",
-      "rgb(84, 168, 61, 1)",
-      "rgb(227, 143, 77, 1)",
-      "rgb(60, 83, 148, 1)",
-      "rgb(107, 139, 177, 1)",
-      "rgb(144, 210, 189, 1)",
-      "rgb(213, 132, 210, 1)",
-      "rgb(255, 154, 143, 1)"]
+    industryNames: [
+      "Apparel & Accessories",
+      "Automotive",
+      "B2B Services",
+      "B2C Services",
+      "Careers & Employment",
+      "Consumer Electronics",
+      "Education",
+      "Finance & Insurance",
+      "Health & Wellness",
+      "Home & Garden",
+      "Home Improvement",
+      "Home Services",
+      "Legal Services",
+      "Real Estate",
+      "Restaurants & Food",
+      "Retail",
+      "Technology",
+      "Travel & Hospitality"],
+    backgroundColors: ["rgb(59, 117, 94, 0.4)", "rgb(106, 108, 192, 0.4)","rgb(202, 222, 45, 0.4)", "rgb(226, 112, 60, 0.4)", "rgb(192, 55, 36, 0.4)", "rgb(37, 120, 180, 0.4)", "rgb(153, 156, 167, 0.4)", "rgb(188, 71, 169, 0.4)", "rgb(44, 114, 125, 0.4)", "rgb(38, 38, 38, 0.4)", "rgb(80, 70, 87, 0.4)", "rgb(84, 168, 61, 0.4)", "rgb(227, 143, 77, 0.4)", "rgb(60, 83, 148, 0.4)", "rgb(107, 139, 177, 0.4)", "rgb(144, 210, 189, 0.4)", "rgb(213, 132, 210, 0.4)", "rgb(255, 154, 143, 0.4)"],
+    borderColors: ["rgb(59, 117, 94, 1)", "rgb(106, 108, 192, 1)", "rgb(202, 222, 45, 1)", "rgb(226, 112, 60, 1)", "rgb(192, 55, 36, 1)", "rgb(37, 120, 180, 1)", "rgb(153, 156, 167, 1)", "rgb(188, 71, 169, 1)", "rgb(44, 114, 125, 1)", "rgb(38, 38, 38, 1)", "rgb(80, 70, 87, 1)", "rgb(84, 168, 61, 1)", "rgb(227, 143, 77, 1)", "rgb(60, 83, 148, 1)", "rgb(107, 139, 177, 1)", "rgb(144, 210, 189, 1)", "rgb(213, 132, 210, 1)", "rgb(255, 154, 143, 1)"]
   }
 } 
 
@@ -343,134 +278,132 @@ const cpaBingShopping = {
 const dollarMetrics = ['cost-per-click', 'cost-per-conversion'];
 const percentMetrics = ['click-thru-rate', 'conversion-rate'];
 
-
 export default ( { metric, network, platform } ) => {
 
-    let options =  {
-      plugins: {
-        datalabels: {
-          display: true,
-          color: 'black',
-          anchor: 'end',
-          align: 'top',
-          formatter: function(value) {
-              if (dollarMetrics.includes(metric)) {
-                return '$' + value.toFixed(2);
-              } else if (percentMetrics.includes(metric)) {
-                return value.toFixed(2) + '%';
-              }
+  let options =  {
+    plugins: {
+      datalabels: {
+        display: true,
+        color: 'black',
+        anchor: 'end',
+        align: 'top',
+        formatter: function(value) {
+            if (dollarMetrics.includes(metric)) {
+              return '$' + value.toFixed(2);
+            } else if (percentMetrics.includes(metric)) {
+              return value.toFixed(2) + '%';
+            }
+        }
+      }
+    },
+    title: {
+      display: false,
+      text: 'Google Advertising Industry Standards',
+      fontSize: 25,
+      fontColor: '#136598',
+      fontFamily: "'Lato', 'Open Sans', sans-serif",
+      padding: 15
+    },
+    legend: {
+      display: false
+    },
+    maintainAspectRatio: false,
+    scales: {
+      yAxes: [
+        {
+          ticks: {
+            callback: function(value) {
+
+            }
+          },
+          beginAtZero: true
+        }
+      ],
+      xAxes: [
+        {
+          ticks: {
+            // Prevents only showing a couple industry names
+            autoSkip: false
+          },
+          gridLines: {
+            display: false
           }
         }
-      },
-      title: {
-        display: false,
-        text: 'Google Advertising Industry Standards',
-        fontSize: 25,
-        fontColor: '#136598',
-        fontFamily: "'Lato', 'Open Sans', sans-serif",
-        padding: 15
-      },
-      legend: {
-        display: false
-      },
-      maintainAspectRatio: false,
-      scales: {
-        yAxes: [
-          {
-            ticks: {
-              callback: function(value) {
+      ],
+    },
+  };
 
-              }
-            },
-            beginAtZero: true
+  var chartData = function() {
+      options.scales.yAxes[0].ticks.callback = (value) => {
+          value.toFixed(2);
+          if (dollarMetrics.includes(metric)) {
+              return '$' + value.toFixed(2);
+          } else if (percentMetrics.includes(metric)) {
+              return value.toFixed(2) + '%';
           }
-        ],
-        xAxes: [
-          {
-            ticks: {
-              // Prevents only showing a couple industry names
-              autoSkip: false
-            },
-            gridLines: {
-              display: false
-            }
-          }
-        ],
-      },
-    };
+      };
 
-    var chartData = function() {
-        options.scales.yAxes[0].ticks.callback = (value) => {
-            value.toFixed(2);
-            if (dollarMetrics.includes(metric)) {
-                return '$' + value.toFixed(2);
-            } else if (percentMetrics.includes(metric)) {
-                return value.toFixed(2) + '%';
-            }
-        };
-
-        options.scales.yAxes[0].ticks.beginAtZero = true;
-        
-        if (metric === 'cost-per-click' && network === 'search' && platform === 'google') {
-          // Change the title dynamically
-          // options.title.text = 'Avg. CPC on Google Search Network';
-          return cpcGoogleSearch
-      } else if (metric === 'cost-per-click' && network === 'display' && platform === 'google') {
-        return cpcGoogleDisplay
-      } else if (metric === 'cost-per-click' && network === 'shopping' && platform === 'google') {
-        return cpcGoogleShopping
-      } else if (metric === 'click-thru-rate' && network === 'search' && platform === 'google') {
-        return ctrGoogleSearch
-      } else if (metric === 'click-thru-rate' && network === 'display' && platform === 'google') {
-        return ctrGoogleDisplay
-      } else if (metric === 'click-thru-rate' && network === 'shopping' && platform === 'google') {
-        return ctrGoogleShopping
-      } else if (metric === 'conversion-rate' && network === 'search' && platform === 'google') {
-        return cvrGoogleSearch
-      } else if (metric === 'conversion-rate' && network === 'display' && platform === 'google') {
-        return cvrGoogleDisplay
-      } else if (metric === 'conversion-rate' && network === 'shopping' && platform === 'google') {
-        return cvrGoogleShopping
-      } else if (metric === 'cost-per-conversion' && network === 'search' && platform === 'google') {
-        return cpaGoogleSearch
-      } else if (metric === 'cost-per-conversion' && network === 'display' && platform === 'google') {
-        return cpaGoogleDisplay
-      } else if (metric === 'cost-per-conversion' && network === 'shopping' && platform === 'google') {
-        return cpaGoogleShopping
-      } else if (metric === 'click-thru-rate' && network === 'search' && platform === 'bing') {
-        return ctrBing
-      } else if (metric === 'click-thru-rate' && network === 'display' && platform === 'bing') {
-        return ctrBing
-      } else if (metric === 'cost-per-click' && network === 'search' && platform === 'bing') {
-        return cpcBing
-      } else if (metric === 'cost-per-click' && network === 'display' && platform === 'bing') {
-        return cpcBing
-      } else if (metric === 'conversion-rate' && network === 'search' && platform === 'bing') {
-        return cvrBing
-      } else if (metric === 'conversion-rate' && network === 'display' && platform === 'bing') {
-        return cvrBing
-      } else if (metric === 'cost-per-conversion' && network === 'search' && platform === 'bing') {
-        return cpaBing
-      } else if (metric === 'cost-per-conversion' && network === 'display' && platform === 'bing') {
-        return cpaBing
-      } else if (metric === 'click-thru-rate' && network === 'shopping' && platform === 'bing') {
-        return ctrBingShopping
-      } else if (metric === 'cost-per-click' && network === 'shopping' && platform === 'bing') {
-        return cpcBingShopping
-      } else if (metric === 'conversion-rate' && network === 'shopping' && platform === 'bing') {
-        return cvrBingShopping
-      } else if (metric === 'cost-per-conversion' && network === 'shopping' && platform === 'bing') {
-        return cpaBingShopping
-      }
+      options.scales.yAxes[0].ticks.beginAtZero = true;
       
+      if (metric === 'cost-per-click' && network === 'search' && platform === 'google') {
+        // Change the title dynamically
+        // options.title.text = 'Avg. CPC on Google Search Network';
+        return cpcGoogleSearch
+    } else if (metric === 'cost-per-click' && network === 'display' && platform === 'google') {
+      return cpcGoogleDisplay
+    } else if (metric === 'cost-per-click' && network === 'shopping' && platform === 'google') {
+      return cpcGoogleShopping
+    } else if (metric === 'click-thru-rate' && network === 'search' && platform === 'google') {
+      return ctrGoogleSearch
+    } else if (metric === 'click-thru-rate' && network === 'display' && platform === 'google') {
+      return ctrGoogleDisplay
+    } else if (metric === 'click-thru-rate' && network === 'shopping' && platform === 'google') {
+      return ctrGoogleShopping
+    } else if (metric === 'conversion-rate' && network === 'search' && platform === 'google') {
+      return cvrGoogleSearch
+    } else if (metric === 'conversion-rate' && network === 'display' && platform === 'google') {
+      return cvrGoogleDisplay
+    } else if (metric === 'conversion-rate' && network === 'shopping' && platform === 'google') {
+      return cvrGoogleShopping
+    } else if (metric === 'cost-per-conversion' && network === 'search' && platform === 'google') {
+      return cpaGoogleSearch
+    } else if (metric === 'cost-per-conversion' && network === 'display' && platform === 'google') {
+      return cpaGoogleDisplay
+    } else if (metric === 'cost-per-conversion' && network === 'shopping' && platform === 'google') {
+      return cpaGoogleShopping
+    } else if (metric === 'click-thru-rate' && network === 'search' && platform === 'bing') {
+      return ctrBing
+    } else if (metric === 'click-thru-rate' && network === 'display' && platform === 'bing') {
+      return ctrBing
+    } else if (metric === 'cost-per-click' && network === 'search' && platform === 'bing') {
+      return cpcBing
+    } else if (metric === 'cost-per-click' && network === 'display' && platform === 'bing') {
+      return cpcBing
+    } else if (metric === 'conversion-rate' && network === 'search' && platform === 'bing') {
+      return cvrBing
+    } else if (metric === 'conversion-rate' && network === 'display' && platform === 'bing') {
+      return cvrBing
+    } else if (metric === 'cost-per-conversion' && network === 'search' && platform === 'bing') {
+      return cpaBing
+    } else if (metric === 'cost-per-conversion' && network === 'display' && platform === 'bing') {
+      return cpaBing
+    } else if (metric === 'click-thru-rate' && network === 'shopping' && platform === 'bing') {
+      return ctrBingShopping
+    } else if (metric === 'cost-per-click' && network === 'shopping' && platform === 'bing') {
+      return cpcBingShopping
+    } else if (metric === 'conversion-rate' && network === 'shopping' && platform === 'bing') {
+      return cvrBingShopping
+    } else if (metric === 'cost-per-conversion' && network === 'shopping' && platform === 'bing') {
+      return cpaBingShopping
     }
+  }
 
-    return (
-      <div className="chart-container">
-        <div className="chart-container-inner">
-          <Bar data={chartData} options={options} redraw />
-        </div>
+  return (
+    <div className="chart-container">
+      <div className="chart-container-inner">
+        <Bar data={chartData} options={options} redraw />
       </div>
-    )
-};
+    </div>
+  )
 
+};
