@@ -62,7 +62,6 @@ body {
 
 /* Begin dropdown styling */
 .dropdowns {
-  /* max-width: 1000px; */
   display: grid;
   margin: 0 auto;
 }
@@ -146,12 +145,10 @@ select::-ms-expand {
 }
 
 @media screen and (max-width: 400px) {
-   
   .chart-container-inner {
     min-width: 700px;
     min-height: 350px;  
   }
-
 }
 
 /* Footer styling */
